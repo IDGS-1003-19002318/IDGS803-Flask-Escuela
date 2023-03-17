@@ -21,7 +21,7 @@ def index():
                             email=create_forms.email.data)
             con = get_connection()
             with con.cursor() as cursor:
-                cursor.execute('call maestroUPD(%s,%s,%s,%s)',(0,maest.nombre,maest.nombre,maest.email))             
+                cursor.execute('call maestroUPD(%s,%s,%s,%s)',(0,maest.nombre,maest.apellidos,maest.email))
             con.commit()
             con.close()
         except Exception as ex:
